@@ -10,7 +10,7 @@
       <a href="index.html">
        <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»">
       </a>
-      <form action="#" method="POST">
+      <form action="#" method="get">
         <!-- Форма будет доработана позднее -->
         <input type="search" placeholder="Поиск:">
       </form>
@@ -19,19 +19,19 @@
       <a>Оформить заказ</a>
       <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
       <section>
-        <h2>Контактная информация</h2>
+        <h2 class="visually-hidden">Контактная информация</h2>
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
         <address>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
       </section>
       <section>
-        <h2>Авторизация на сайте</h2>
+        <h2 class="visually-hidden">Авторизация на сайте</h2>
         <!-- Если пользователь авторизован, эти ссылки показываться не должны -->
         <a>Войти</a>
         <a>Регистрация</a>
-        <!-- Если пользователь не авторизован, эти ссылки показываться не должны -->
-        <a>Равшан Джамшутович</a>
-        <a>Выход</a>
-        <ul>
+        <!-- Если пользователь не авторизован, эти ссылки не отображаются -->
+        <a class="hide">Равшан Джамшутович</a>
+        <a class="hide">Выход</a>
+        <ul class="hide">
           <li><a>Мои заказы</a></li>
           <li><a>Личный кабинет</a></li>
         </ul>
@@ -58,12 +58,12 @@
        <img src="img/logo-technomart.svg" width="138" height="23" alt="Логотип магазина «Техномарт»">
       </a>
       <section>
-        <h2>Как нас найти</h2>
+        <h2 class="visually-hidden">Как нас найти</h2>
         <address>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 </address>
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
       </section>
       <section>
-        <h2>Меню сайта</h2>
+        <h2 class="visually-hidden">Меню сайта</h2>
         <ul>
           <li><a>Компания</a></li>
           <li><a>Новости</a></li>
@@ -81,7 +81,7 @@
         Все права защищены
       </p>
       <section>
-        <h2>Контакты в социальных сетях</h2>
+        <h2 class="visually-hidden">Контакты в социальных сетях</h2>
         <ul>
           <li><a href="blanc.html">Вконтакте</a></li>
           <li><a href="blanc.html">Фейсбук</a></li>
@@ -89,7 +89,7 @@
         </ul>
       </section>
       <section>
-        <h2>Информация о разработчике</h2>
+        <h2 class="visually-hidden">Информация о разработчике</h2>
         <dl>
           <dt>Обратная связь:</dt>
           <dd><a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></dd>

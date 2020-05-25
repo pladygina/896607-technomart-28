@@ -10,24 +10,24 @@
       <a href="index.html">
        <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»">
       </a>
-      <form action="#" method="POST">
+      <form action="#" method="get">
         <!-- Форма будет доработана позднее -->
         <input type="search" placeholder="Поиск:">
       </form>
       <a href="blanc.html">Закладки: 0</a>
-      <a href="blanc.html">Корзина: 0</a>
+      <a href="blanc.html">Корзина: 10</a>
       <a href="blanc.html">Оформить заказ</a>
       <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
       <section>
-        <h2>Контактная информация</h2>
+        <h2 class="visually-hidden">Контактная информация</h2>
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
         <address>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
       </section>
       <section>
-        <h2>Авторизация на сайте</h2>
-        <!-- Если пользователь авторизован, эти ссылки показываться не должны -->
-        <a href="blanc.html">Войти</a>
-        <a href="blanc.html">Регистрация</a>
+        <h2 class="visually-hidden">Авторизация на сайте</h2>
+        <!-- Если пользователь авторизован, эти ссылки не отображаются -->
+        <a href="blanc.html" class="hide">Войти</a>
+        <a href="blanc.html" class="hide">Регистрация</a>
         <!-- Если пользователь не авторизован, эти ссылки показываться не должны -->
         <a href="blanc.html">Равшан Джамшутович</a>
         <a href="blanc.html">Выход</a>
@@ -61,13 +61,54 @@
       <section>
         <h3>Фильтр:</h3>
         <!-- Тут должна быть форма, в этом задании пока не размечаем -->
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <fieldset>
+            <legend>Производители:</legend>
+            <ul>
+              <li>
+                <label for="filter-bosch">Bosch</label>
+                <input id="filter-bosch" type="checkbox" name="bosch" checked>
+              </li>
+              <li>
+                <label for="filter-interskol">Интерскол</label>
+                <input id="filter-interskol" type="checkbox" name="interskol">
+              </li>
+              <li>
+                <label for="filter-makita">Makita</label>
+                <input id="filter-makita" type="checkbox" name="makita" checked>
+              </li>
+              <li>
+                <label for="filter-dewalt">Dewalt</label>
+                <input id="filter-dewalt" type="checkbox" name="dewalt">
+              </li>
+              <li>
+                <label for="filter-hitachi">Hitachi</label>
+                <input id="filter-hitachi" type="checkbox" name="hitachi">
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Питание:</legend>
+            <ul>
+              <li>
+                <label for="filter-battery">Аккумуляторные</label>
+                <input id="filter-battery" type="radio" name="power-type" value="battery" checked>
+              </li>
+              <li>
+                <label for="filter-power">Сетевые</label>
+                <input id="filter-power" type="radio" name="power-type" value="power">
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
       </section>
       <section>
         <h3>Сортировка:</h3>
         <!-- В этом задании пока не размечаем -->
       </section>
       <section>
-        <h3>Список перфораторов</h3>
+        <h3 class="visually-hidden">Список перфораторов</h3>
         <ul>
           <li>
             <h4><a href="blanc.html">Перфоратор BOSCH BFG 6000</a></h4>
@@ -162,12 +203,12 @@
        <img src="img/logo-technomart.svg" width="138" height="23" alt="Логотип магазина «Техномарт»">
       </a>
       <section>
-        <h2>Как нас найти</h2>
+        <h2 class="visually-hidden">Как нас найти</h2>
         <address>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 </address>
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
       </section>
       <section>
-        <h2>Меню сайта</h2>
+        <h2 class="visually-hidden">Меню сайта</h2>
         <ul>
           <li><a href="blanc.html">Компания</a></li>
           <li><a href="blanc.html">Новости</a></li>
@@ -185,7 +226,7 @@
         Все права защищены
       </p>
       <section>
-        <h2>Контакты в социальных сетях</h2>
+        <h2 class="visually-hidden">Контакты в социальных сетях</h2>
         <ul>
           <li><a href="blanc.html">Вконтакте</a></li>
           <li><a href="blanc.html">Фейсбук</a></li>
@@ -193,7 +234,7 @@
         </ul>
       </section>
       <section>
-        <h2>Информация о разработчике</h2>
+        <h2 class="visually-hidden">Информация о разработчике</h2>
         <dl>
           <dt>Обратная связь:</dt>
           <dd><a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></dd>
@@ -202,6 +243,11 @@
         </dl>
       </section>
     </footer>
-    <!-- разметка всплывающих окон будет добавлена позже -->
+    <section>
+      <h2>Товар добавлен в корзину</h2>
+      <a href="blanc.html">Оформить заказ</a>
+      <button type="button">Продолжить покупки</button>
+      <button type="button">Закрыть</button>
+    </section>
   </body>
 </html>
