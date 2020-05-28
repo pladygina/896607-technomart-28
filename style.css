@@ -1,0 +1,304 @@
+:root {
+  --basic-red: #EE3643;
+  --basic-green: #63A63E;
+  --basic-grey: #3D546F;
+  --basic-greylight: #C5C5C5;
+  --basic-background: #F1F5F7;
+  --basic-wight: #FFFFFF;
+  --basic-black: #000000;
+  --special-yellow: #FFBF47;
+  --special-blue: #3BBCE3;
+  --special-lilac: #DC91D8;
+  --special-greenlight: #8ED78F;
+  --special-yellowlight: #FFD180;
+  --success: #5FBB2D;
+  --warning: #FFBF47;
+  --error: #BA2732;
+  --dark-background: #293449;
+  --dark-blue: #32425C;
+}
+
+body {
+  min-width: 960px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--basic-wight);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 940px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.text-navigation {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--basic-wight);
+}
+
+div.site-navigation {
+  width: 100%;
+  background-color: var(--dark-background);
+}
+
+div.top-logo {
+  box-sizing: border-box;
+  width: 220px;
+  padding-top: 12px;
+  padding-bottom: 17px;
+  padding-left: 55px;
+  padding-right: 57px;
+  background-color: var(--basic-red);
+  box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+}
+
+div.top-logo:active {
+  background-color: var(--error);
+}
+
+.text-navigation input {
+  background-color: transparent;
+  border: none;
+}
+
+.text-navigation.new-order {
+  background-color: var(--basic-green);
+}
+
+
+.text-navigation.new-order:hover,
+.text-navigation.new-order:focus {
+  background-color: var(--success);
+}
+
+.text-navigation.new-order:active {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.text-navigation:active {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* состояния для корзины и закладок
+при наведении и фокусе будут позже
+вместе с псевдоэлементами */
+
+.text-navigation.new-order:active {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+div.info-block {
+  width: 100%;
+  margin: 0;
+  background-color: var(--basic-background);
+}
+
+header h1 {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  color: var(--basic-red);
+  font-style: italic;
+}
+
+.header-contacts .tel {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+  color: var(--basic-red);
+  font-weight: bold;
+}
+
+.header-contacts .address {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--dark-blue);
+  font-style: normal;
+}
+
+.login-block a {
+  background-color: var(--basic-wight);
+  font-family: 'Cuprum', sans-serif;
+  color: var(--basic-black);
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.login-block a:hover {
+  color: var(--basic-red);
+}
+
+.login-block a:active {
+  color: var(--basic-greylight);
+}
+
+.login-block .personal-menu {
+  background-color: transparent;
+  color: var(--dark-blue);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.login-block li:first-child {
+  list-style: none;
+}
+
+div.main-navigation {
+  background-color: var(--dark-blue);
+}
+
+.main-navigation li {
+  list-style: none;
+}
+
+.main-navigation .text-navigation:hover,
+.main-navigation .text-navigation:focus {
+ background-color: var(--dark-background);
+}
+
+main h2 {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+main .main-text {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+main .partners {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.about,
+.main-contacts {
+  text-align: left;
+}
+
+.about li {
+  list-style: none;
+}
+
+main .button {
+  background-color: var(--basic-red);
+  font-family: 'Cuprum', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--basic-wight);
+  text-transform: uppercase;
+}
+
+main .button:active {
+  background-color: var(--error);
+}
+
+.main-footer,
+.bottom-footer {
+  width: 100%;
+}
+
+.main-footer {
+  background-color: var(--dark-blue);
+  color: var(--basic-wight);
+}
+
+
+.bottom-footer {
+  background-color: var(--dark-background);
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-wight);
+}
+
+footer li {
+  list-style: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+.text-navigation.yellowlight {
+  color: var(--special-yellowlight);
+}
+
+div.footer-logo {
+  box-sizing: border-box;
+  width: 220px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  padding-left: 41px;
+  padding-right: 41px;
+  background-color: var(--basic-red);
+  box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+}
+
+.footer-contacts .tel,
+.footer-contacts .address {
+  font-family: 'Cuprum', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--basic-wight);
+  font-style: normal;
+}
+
+.main-footer a:active {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.bottom-footer a.social {
+  background-color: #212A3A;
+  color: var(--basic-wight);
+}
+
+.bottom-footer a.social:hover,
+.bottom-footer a.social:focus,
+.bottom-footer a.social:active {
+  background-color: var(--basic-red);
+}
+
+.bottom-footer a.support {
+  color: var(--special-yellowlight);
+}
+
+.bottom-footer a.support:active {
+  text-decoration: none;
+  color: var(--basic-red);
+}
+
+
