@@ -40,8 +40,10 @@
             <a href="blank.html">Войти</a>
             <a href="blank.html">Регистрация</a>
             <!-- Если пользователь не авторизован, эти ссылки не отображаются -->
-            <a href="blank.html" class="hide">Равшан Джамшутович</a>
-            <a href="blank.html" class="hide">Выход</a>
+            <div class="if-user hide">
+              <a href="blank.html" class="username">Равшан Джамшутович</a>
+              <a href="blank.html" class="logout">Выход</a>
+            </div>
             <ul class="hide">
               <li><a href="blank.html" class="personal-menu">Мои заказы</a></li>
               <li><a href="blank.html" class="personal-menu">Личный кабинет</a></li>

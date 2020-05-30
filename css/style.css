@@ -28,8 +28,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 a {
   text-decoration: none;
+}
+
+*, *::before, *::after {
+ box-sizing: border-box;
 }
 
 .hide {
@@ -84,6 +89,28 @@ a {
 .text-navigation input {
   background-color: transparent;
   border: none;
+}
+
+form.text-navigation input::placeholder {
+  color: var(--basic-wight);
+}
+
+form.text-navigation button {
+  width: 17px;
+  height: 17px;
+  background-color: var(--dark-background);
+  background-image: url("../img/icon-search.svg");
+  border: none;
+  font-size: 0;
+}
+
+form.text-navigation input:focus {
+  background-color: var(--basic-wight);
+  color: var(--basic-black);
+}
+
+.text-navigation.not-empty {
+  background-color: var(--basic-red);
 }
 
 .text-navigation.new-order {
@@ -166,6 +193,11 @@ header h1 {
   line-height: 18px;
 }
 
+.login-block .if-user {
+  background-color: transparent;
+  font-size: 0;
+}
+
 .login-block li:first-child {
   list-style: none;
 }
@@ -190,6 +222,15 @@ main h2 {
   color: var(--basic-black);
   text-transform: uppercase;
 }
+
+main h2.special {
+  color: var(--dark-blue);
+}
+
+main h2.inner-page {
+  background-color: #F2F6F8;
+}
+
 
 main .main-text {
   font-family: 'PT Sans', sans-serif;
@@ -223,6 +264,160 @@ main .button {
 
 main .button:active {
   background-color: var(--error);
+}
+
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs a {
+  color: var(--basic-black);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+h3.filter {
+  background-color: #F7F3EC;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.filter ul {
+  list-style: none;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15x;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.filter legend {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.filter .disabled {
+  opacity: 0.4;
+}
+
+/* Для других состояний меняются изображения инпутов, будет позже */
+
+.catalog-list ul {
+  list-style: none;
+}
+
+.catalog-list li {
+  border: 1px solid #EAEAEA;
+}
+
+.catalog-list li:hover,
+.catalog-list li:focus {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.catalog-list li:hover img,
+.catalog-list li:focus img {
+  display: none;
+}
+
+/* непонятно, что делать с фокусом... к условиям добавить h4? */
+
+.catalog-list li:not(:hover):not(:focus) .button {
+  display: none;
+}
+
+.catalog-list h4 a {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--basic-black);
+}
+
+.catalog-list a.button {
+  background-color: var(--basic-green);
+  color: var(--basic-wight);
+  box-shadow: inset 0px -3px 0px #367315;
+  border-radius: 2px;
+}
+
+.catalog-list a.button:hover,
+.catalog-list a.button:focus {
+  background-color: var(--success);
+}
+
+.catalog-list a.button:active {
+  background-color: #518534;
+}
+
+.catalog-list button.button {
+  width: 135px;
+  height: 38px;
+  background-color: var(--basic-wight);
+  color: var(--dark-blue);
+  border: 3px solid var(--basic-green);
+}
+
+.catalog-list button.button:hover,
+.catalog-list button.button:focus {
+  border-color: var(--dark-blue);
+}
+
+.catalog-list button.button:active {
+  opacity: 0.5;
+}
+
+/* двойной селектор на случай, если у нас будут цены
+в карточке товара с другим форматированием */
+.catalog-list .item-price {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.catalog-list .old-price {
+  color: #A9A9A9;
+  text-decoration: line-through;
+}
+
+.catalog-list .new-price {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 44px;
+  background-image: url("../img/red-button.svg");
+  background-repeat: no-repeat;
+  color: var(--basic-wight);
+}
+
+.catalog-list p.new-item {
+  width: 100px;
+  height: 30px;
+  transform: rotate(45deg);
+  background-color: var(--basic-red);
+  font-family: 'Cuprum', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--basic-wight);
+  text-align: center;
+  /* Углы и выравнивание */
+}
+
+.catalog-list div.new-item {
+  width: 70px;
+  height: 70px;
+}
+
+.goods-about {
+  background-color: var(--basic-background);
 }
 
 .main-footer,
