@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
@@ -7,17 +7,15 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="page-body">
     <header>
       <!-- Шапка сайта -->
       <div class="site-navigation">
-        <div class="wrapper">
-          <div class="main-logo">
-            <a>
-              <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»">
-            </a>
-          </div>
-          <form action="https://echo.htmlacademy.ru" method="get" class="text-navigation">
+        <div class="wrapper site-navigation-elements">
+           <a class="main-logo">
+            <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип магазина «Техномарт»">
+          </a>
+          <form action="https://echo.htmlacademy.ru" method="get" class="text-navigation search">
             <button type="submit">Найти</button>
             <input type="search" placeholder="Поиск:" name="search">
           </form>
@@ -28,7 +26,11 @@
       </div>
       <div class="info-block">
         <div class="wrapper">
-          <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+          <h1 class="main-title">
+            Интернет-магазин<br>
+            строительных материалов<br>
+            и инструментов для ремонта
+           </h1>
           <section class="header-contacts">
             <h2 class="visually-hidden">Контактная информация</h2>
             <a href="tel:+78125550555" class="tel">+7 (812) 555-05-55</a>
@@ -43,34 +45,34 @@
             <div class="if-user hide">
               <a href="blank.html" class="username">Равшан Джамшутович</a>
               <a href="blank.html" class="logout">Выход</a>
+              <ul>
+                <li><a href="blank.html" class="personal-menu">Мои заказы</a></li>
+                <li><a href="blank.html" class="personal-menu">Личный кабинет</a></li>
+              </ul>
             </div>
-            <ul class="hide">
-              <li><a href="blank.html" class="personal-menu">Мои заказы</a></li>
-              <li><a href="blank.html" class="personal-menu">Личный кабинет</a></li>
-            </ul>
           </section>
         </div>
-      </div>
-      <div class="wrapper main-navigation">
-        <nav>
-          <!-- Основное меню -->
-          <ul>
-            <li><a class="text-navigation">Главная</a></li>
-            <li><a href="blank.html" class="text-navigation">Компания</a></li>
-            <li><a href="catalog.html" class="text-navigation">Каталог</a></li>
-            <li><a href="blank.html" class="text-navigation">Новости</a></li>
-            <li><a href="blank.html" class="text-navigation">Спецпредложения</a></li>
-            <li><a href="blank.html" class="text-navigation">Доставка</a></li>
-            <li><a href="blank.html" class="text-navigation">Контакты</a></li>
-          </ul>
-        </nav>
+        <div class="wrapper main-navigation">
+          <nav>
+            <!-- Основное меню -->
+            <ul>
+              <li><a class="text-navigation">Главная</a></li>
+              <li><a href="blank.html" class="text-navigation">Компания</a></li>
+              <li><a href="catalog.html" class="text-navigation">Каталог</a></li>
+              <li><a href="blank.html" class="text-navigation">Новости</a></li>
+              <li><a href="blank.html" class="text-navigation">Спецпредложения</a></li>
+              <li><a href="blank.html" class="text-navigation">Доставка</a></li>
+              <li><a href="blank.html" class="text-navigation">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
       <!-- Здесь должен быть блок, который в первом из заданий по разметке указано не размечать -->
       <div class="wrapper">
         <section class="about">
-          <h2>Компания «Техномарт»</h2>
+          <h2 class="section-title">Компания «Техномарт»</h2>
           <p class="main-text">Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
           <p class="main-text">
             Мы можем доставить ваш товар в самые отдаленные точки России! <br>
@@ -84,7 +86,7 @@
           <a href="blank.html" class="button">Подробнее о компании</a>
         </section>
         <section class="main-contacts">
-          <h2>Контакты</h2>
+          <h2 class="section-title">Контакты</h2>
           <p class="main-text">
             Вы можете забрать товар сами, <br>
             заехав в наш офис:
@@ -112,16 +114,18 @@
           </section>
           <section>
             <h2 class="visually-hidden">Меню сайта</h2>
-            <ul>
+            <ul class="footer-navigation">
               <li><a href="blank.html" class="text-navigation">Компания</a></li>
               <li><a href="blank.html" class="text-navigation">Новости</a></li>
               <li><a href="catalog.html" class="text-navigation">Каталог</a></li>
               <li><a href="blank.html" class="text-navigation">Доставка</a></li>
               <li><a href="blank.html" class="text-navigation">Контакты</a></li>
-              <li><a href="blank.html" class="text-navigation yellowlight">Материалы</a></li>
-              <li><a href="blank.html" class="text-navigation yellowlight">Техника</a></li>
-              <li><a href="blank.html" class="text-navigation yellowlight">Инструменты</a></li>
-              <li><a href="blank.html" class="text-navigation yellowlight">Спецпредложения</a></li>
+            </ul>
+            <ul class="footer-navigation-extra">
+              <li><a href="blank.html" class="text-navigation footer-navigation-extra">Материалы</a></li>
+              <li><a href="blank.html" class="text-navigation footer-navigation-extra">Техника</a></li>
+              <li><a href="blank.html" class="text-navigation footer-navigation-extra">Инструменты</a></li>
+              <li><a href="blank.html" class="text-navigation footer-navigation-extra">Спецпредложения</a></li>
           </ul>
           </section>
         </div>
@@ -134,7 +138,7 @@
           </p>
           <section>
             <h2 class="visually-hidden">Контакты в социальных сетях</h2>
-            <ul>
+            <ul class="social">
               <li><a href="blank.html" class="social social-vk">Вконтакте</a></li>
               <li><a href="blank.html" class="social social-fb">Фейсбук</a></li>
               <li><a href="blank.html" class="social social-insta">Инстаграм</a></li>

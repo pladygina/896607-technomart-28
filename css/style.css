@@ -15,7 +15,17 @@
   --warning: #FFBF47;
   --error: #BA2732;
   --dark-background: #293449;
+  --title-background: #F2F6F8;
+  --service-background: #F7F3EC;
   --dark-blue: #32425C;
+  --extra-dark-blue: #212A3A;
+  --item-border: #EAEAEA;
+  --button-border-light: #E5E5E5;
+  --basic-green-shadow: #367315;
+  --dark-green: #518534;
+  --old-grey: #A9A9A9;
+  --font-primary: "Cuprum", sans-serif;
+  --font-extra: "PT Sans", sans-serif;
 }
 
 body {
@@ -59,8 +69,88 @@ a {
   margin: 0 auto;
 }
 
+/* Сетки */
+
+.col3 {
+  width: 220px;
+}
+
+.col4 {
+  width: 300px;
+}
+
+.col8 {
+  width: 620px;
+}
+
+.col9 {
+  width: 700px;
+}
+
+.col12 {
+  width: 940px;
+}
+
+/* Остальные ширины не используются,
+можно добавить на всякий случай */
+.page {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.site-navigation-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+form.search {
+  margin-right: auto;
+  width: 270px;
+  padding-left: 17px;
+}
+
+a.bookmarks {
+  width: 154px;
+}
+
+a.basket {
+  width: 136px;
+}
+
+a.new-order {
+  width: 160px;
+  height: 42px;
+}
+
+.info-block .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header-contacts {
+  margin-right: 20px;
+}
+
+.login-block {
+  margin: 0;
+}
+
+.main-navigation {
+  box-shadow: inset 0px -5px 0px var(--dark-background);
+/* во время детализации сетки */
+}
+
+/* Базовая стилизация */
 .text-navigation {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
   line-height: 24px;
   color: var(--basic-wight);
@@ -68,34 +158,34 @@ a {
 
 .site-navigation {
   width: 100%;
+  height: 42px;
+  margin-bottom: 0;
   background-color: var(--dark-background);
 }
 
 .main-logo {
   box-sizing: border-box;
   width: 220px;
-  padding-top: 12px;
-  padding-bottom: 17px;
-  padding-left: 55px;
-  padding-right: 57px;
+  height: 47px;
   background-color: var(--basic-red);
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+  padding-left: 55px;
 }
 
 .main-logo:active {
   background-color: var(--error);
 }
 
-.text-navigation input {
+.search input {
   background-color: transparent;
   border: none;
 }
 
-form.text-navigation input::placeholder {
+form.search input::placeholder {
   color: var(--basic-wight);
 }
 
-form.text-navigation button {
+form.search button {
   width: 17px;
   height: 17px;
   background-color: var(--dark-background);
@@ -104,10 +194,27 @@ form.text-navigation button {
   font-size: 0;
 }
 
-form.text-navigation input:focus {
+form.search input:focus {
   background-color: var(--basic-wight);
   color: var(--basic-black);
 }
+
+/* Убрать крестик */
+input[type=text]::-ms-clear {
+  display: none; width : 0; height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none; width : 0; height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+ display: none;
+}
+
 
 .text-navigation.not-empty {
   background-color: var(--basic-red);
@@ -142,20 +249,25 @@ form.text-navigation input:focus {
 
 div.info-block {
   width: 100%;
+  height: 320px;
   margin: 0;
   background-color: var(--basic-background);
 }
 
-header h1 {
+.main-title {
+  margin-top:0;
+  margin-right: 20px;
+  padding-left: 30px;
   font-family: 'Cuprum', sans-serif;
   font-size: 16px;
-  line-height: 23px;
   color: var(--basic-red);
   font-style: italic;
+  font-weight: normal;
+  /* Чтобы добиться переносов - сделать флекс-контейнером и нарезать слова??? */
 }
 
 .header-contacts .tel {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 21px;
   line-height: 30px;
   color: var(--basic-red);
@@ -163,7 +275,7 @@ header h1 {
 }
 
 .header-contacts .address {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: 24px;
   color: var(--dark-blue);
@@ -172,13 +284,25 @@ header h1 {
 
 .login-block a {
   background-color: var(--basic-wight);
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   color: var(--basic-black);
   font-size: 21px;
   line-height: 21px;
 }
 
-.login-block a:hover {
+.if-user a.personal-menu {
+  background-color: transparent;
+  color: var(--dark-blue);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.if-user li:first-child {
+  list-style: none;
+}
+
+.login-block a:hover,
+.login-block a:focus {
   color: var(--basic-red);
 }
 
@@ -186,21 +310,15 @@ header h1 {
   color: var(--basic-greylight);
 }
 
-.login-block .personal-menu {
-  background-color: transparent;
-  color: var(--dark-blue);
-  font-size: 16px;
-  line-height: 18px;
+.login-block .username:hover,
+.login-block .username:focus {
+  color: var(--basic-black);
 }
 
-.login-block .if-user {
-  background-color: transparent;
-  font-size: 0;
+.login-block .username:active {
+  color: var(--basic-greylight);
 }
-
-.login-block li:first-child {
-  list-style: none;
-}
+/* после вставки иконок закончить состояния */
 
 div.main-navigation {
   background-color: var(--dark-blue);
@@ -215,31 +333,32 @@ div.main-navigation {
  background-color: var(--dark-background);
 }
 
-main h2 {
-  font-family: 'Cuprum', sans-serif;
+main .section-title {
+  font-family: var(--font-primary);
   font-size: 30px;
   line-height: 30px;
   color: var(--basic-black);
   text-transform: uppercase;
+  font-weight: normal;
 }
 
-main h2.special {
+main .section-title-special {
   color: var(--dark-blue);
 }
 
-main h2.inner-page {
-  background-color: #F2F6F8;
+main .section-title.inner-page {
+  background-color: var(--title-background);
 }
 
 
 main .main-text {
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-extra);
   font-size: 13px;
   line-height: 24px;
 }
 
 main .partners {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
   line-height: 24px;
 }
@@ -255,7 +374,7 @@ main .partners {
 
 main .button {
   background-color: var(--basic-red);
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: 18px;
   color: var(--basic-wight);
@@ -272,91 +391,123 @@ main .button:active {
 
 .breadcrumbs a {
   color: var(--basic-black);
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-extra);
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
 }
 
 h3.filter {
-  background-color: #F7F3EC;
-  font-family: 'PT Sans', sans-serif;
+  background-color: var(--service-background);
+  font-family: var(--font-extra);
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+  color: var(--basic-black);
 }
 
 .filter ul {
   list-style: none;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 15x;
+  font-family: var(--font-extra);
+  font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
 }
 
 .filter legend {
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-extra);
   font-size: 17px;
   line-height: 30px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.filter .disabled {
+.filter input[disabled] + label {
   opacity: 0.4;
 }
 
+.filter .filter-button {
+  height: 38px;
+  color: var(--basic-black);
+  font-family: var(--font-extra);
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: var(--basic-wight);
+  border: 1px solid var(--button-border-light);
+}
 /* Для других состояний меняются изображения инпутов, будет позже */
 
 .catalog-list ul {
   list-style: none;
 }
 
-.catalog-list li {
-  border: 1px solid #EAEAEA;
+.item-card {
+  position: relative;
+  border: 1px solid var(--item-border);
+  overflow: hidden;
 }
 
-.catalog-list li:hover,
-.catalog-list li:focus {
+.item-card:hover {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.catalog-list li:hover img,
-.catalog-list li:focus img {
-  display: none;
+.item-menu .item-picture {
+  position: relative;
+  width: 100%;
+  background-color: var(--basic-wight);
 }
 
-/* непонятно, что делать с фокусом... к условиям добавить h4? */
-
-.catalog-list li:not(:hover):not(:focus) .button {
-  display: none;
+.item-card:hover .item-picture {
+  top: -300px;
+  opacity: 0;
 }
 
-.catalog-list h4 a {
-  font-family: 'PT Sans', sans-serif;
+.item-menu {
+  position: relative;
+  width: 100%;
+}
+
+.item-menu .item-navigation {
+  position: absolute;
+}
+
+/* Проблемы с доступностью без мышки:
+(1) нельзя выделить карточку товара через Таб;
+(2) нельзя попасть на кнопки "Купить" и "В зак0ладки"
+
+Теоретически, если мы по ссылке в h4 попадаем на карточку товара,
+с клавиатуры купить и положить в закладку товар можно там.
+ */
+
+.item-card .item-link {
+  font-family: var(--font-extra);
   font-size: 18px;
   line-height: 20px;
   font-weight: bold;
   color: var(--basic-black);
 }
 
-.catalog-list a.button {
+.item-navigation a.button {
+  display: block;
+  width: 135px;
+  height: 38px;
   background-color: var(--basic-green);
   color: var(--basic-wight);
-  box-shadow: inset 0px -3px 0px #367315;
+  box-shadow: inset 0px -3px 0px var(--basic-green-shadow);
   border-radius: 2px;
 }
 
-.catalog-list a.button:hover,
-.catalog-list a.button:focus {
+.item-navigation a.button:hover,
+.item-navigation a.button:focus {
   background-color: var(--success);
 }
 
-.catalog-list a.button:active {
-  background-color: #518534;
+.item-navigation a.button:active {
+  background-color: var(--dark-green);
 }
 
-.catalog-list button.button {
+.item-navigation button.button {
   width: 135px;
   height: 38px;
   background-color: var(--basic-wight);
@@ -364,30 +515,28 @@ h3.filter {
   border: 3px solid var(--basic-green);
 }
 
-.catalog-list button.button:hover,
-.catalog-list button.button:focus {
+.item-navigation button.button:hover,
+.item-navigation button.button:focus {
   border-color: var(--dark-blue);
 }
 
-.catalog-list button.button:active {
+.item-navigation button.button:active {
   opacity: 0.5;
 }
 
-/* двойной селектор на случай, если у нас будут цены
-в карточке товара с другим форматированием */
-.catalog-list .item-price {
-  font-family: 'PT Sans', sans-serif;
+.item-card .item-price {
+  font-family: var(--font-extra);
   font-size: 17px;
   line-height: 18px;
   font-weight: bold;
 }
 
-.catalog-list .old-price {
-  color: #A9A9A9;
+.item-card .old-price {
+  color: var(--old-grey);
   text-decoration: line-through;
 }
 
-.catalog-list .new-price {
+.item-card .new-price {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 32px;
@@ -397,23 +546,21 @@ h3.filter {
   color: var(--basic-wight);
 }
 
-.catalog-list p.new-item {
+.item-card p.new-item {
+  position: absolute;
+  right: -25px;
+  top: -4px;
   width: 100px;
   height: 30px;
   transform: rotate(45deg);
   background-color: var(--basic-red);
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
   color: var(--basic-wight);
   text-align: center;
   /* Углы и выравнивание */
-}
-
-.catalog-list div.new-item {
-  width: 70px;
-  height: 70px;
 }
 
 .goods-about {
@@ -438,7 +585,9 @@ h3.filter {
   color: var(--basic-wight);
 }
 
-footer li {
+footer .footer-navigation,
+footer .footer-navigation-extra,
+footer .social {
   list-style: none;
 }
 
@@ -447,7 +596,7 @@ footer a:focus {
   text-decoration: underline;
 }
 
-.text-navigation.yellowlight {
+.text-navigation.footer-navigation-extra {
   color: var(--special-yellowlight);
 }
 
@@ -464,7 +613,7 @@ div.footer-logo {
 
 .footer-contacts .tel,
 .footer-contacts .address {
-  font-family: 'Cuprum', sans-serif;
+  font-family: var(--font-primary);
   font-size: 18px;
   line-height: 24px;
   color: var(--basic-wight);
@@ -477,7 +626,7 @@ div.footer-logo {
 }
 
 .bottom-footer a.social {
-  background-color: #212A3A;
+  background-color: var(--extra-dark-blue);
   color: var(--basic-wight);
 }
 
@@ -495,5 +644,3 @@ div.footer-logo {
   text-decoration: none;
   color: var(--basic-red);
 }
-
-
