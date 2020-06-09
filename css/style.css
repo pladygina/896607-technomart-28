@@ -175,6 +175,10 @@ a {
   font-size: 18px;
   line-height: 24px;
   color: var(--basic-white);
+  padding-top: 16px;
+  padding-right: 24px;
+  padding-bottom: 20px;
+  padding-left: 27px;
 }
 
 .site-navigation {
@@ -803,11 +807,16 @@ a.button:active {
   background-color: var(--basic-white);
   color: var(--dark-blue);
   border: 3px solid var(--basic-green);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
 }
 
 .item-navigation button.button:hover,
 .item-navigation button.button:focus {
   border-color: var(--dark-blue);
+  outline: none;
 }
 
 .item-navigation button.button:active {
