@@ -315,6 +315,7 @@ a {
 .search-input:focus {
   background-color: var(--basic-white);
   color: var(--basic-black);
+  outline: none;
 }
 
 input[type=text]::-ms-clear {
