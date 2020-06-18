@@ -20,6 +20,7 @@
   --title-background: #F2F6F8;
   --service-background: #F7F3EC;
   --form-background: #F4F4F4;
+  --price-filter: #444444;
   --dark-blue: #32425C;
   --extra-dark-blue: #212A3A;
   --item-border: #EAEAEA;
@@ -28,6 +29,9 @@
   --dark-green: #518534;
   --old-grey: #A9A9A9;
   --button-greylight: #B5B5B5;
+  --scale-grey: #D7DCDE;
+  --scale-green: #00CA74;
+  --scale-toggle: #ABABAB;
   --font-primary: "Cuprum", sans-serif;
   --font-extra: "PT Sans", sans-serif;
 }
@@ -121,6 +125,11 @@ a {
   width: 940px;
 }
 
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .page {
   height: 100%;
 }
@@ -133,6 +142,7 @@ a {
 }
 
 .site-navigation-elements {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -141,7 +151,7 @@ a {
 
 .site-navigation-link {
   display: block;
-  height: 42px;
+  min-height: 42px;
   font-family: var(--font-primary);
   font-size: 18px;
   line-height: 24px;
@@ -240,12 +250,13 @@ a {
 
 .site-navigation {
   width: 100%;
-  height: 42px;
+  min-height: 42px;
   margin-bottom: 0;
   background-color: var(--dark-background);
 }
 
 .main-logo {
+  position: absolute;
   box-sizing: border-box;
   width: 220px;
   height: 47px;
@@ -265,6 +276,7 @@ a {
   height: 42px;
   margin: 0;
   padding: 0;
+  margin-left: 220px;
   margin-right: auto;
 }
 
@@ -335,7 +347,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .info-block {
   width: 100%;
-  height: 278px;
+  min-height: 278px;
   margin: 0;
   padding: 0;
   padding-top: 45px;
@@ -399,9 +411,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding-top: 4px;
 }
 
-.login-block:not(.hide) {
-  display: flex;
-  flex-wrap: nowrap;
+.login-block.rows {
   flex-direction: row;
   justify-content: flex-end;
   align-content: stretch;
@@ -410,8 +420,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .if-user:not(.hide) {
-  display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-end;
   align-content: stretch;
@@ -422,7 +430,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .login-block a,
 .if-user a:not(.personal-menu) {
   display: block;
-  height: 45px;
+  min-height: 45px;
   background-color: var(--basic-white);
   font-family: var(--font-primary);
   color: var(--basic-black);
@@ -434,21 +442,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .login-block .login {
   position: relative;
   width: 120px;
-  padding-left: 45px;
+  padding-left: 19px;
   margin-right: 11px;
   margin-left: auto;
-}
-
-.login-block .login::before {
-  content: "";
-  width: 20px;
-  height: 17px;
-  position: absolute;
-  left: 19px;
-  top: 15px;
-  background-image: url("../img/icon-login.svg");
-  background-position: 0 0;
-  background-repeat: no-repeat;
 }
 
 .login-block .sign-up {
@@ -458,44 +454,47 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .if-user .username {
-  width: 250px;
-  padding-left: 58px;
+  width: 263px;
+  padding-left: 16px;
   position: relative;
 }
 
-.if-user .username::before {
-  content: "";
-  width: 20px;
-  height: 18px;
+span.username-text {
   position: absolute;
-  left: 16px;
-  top: 14px;
-  background-image: url("../img/icon-user.svg");
-  background-position: 0 0;
-  background-repeat: no-repeat;
+  right: 20px;
+  text-align: right;
 }
 
 .if-user .logout {
-  width: 50px;
+  margin: 0;
+  width: 37px;
   position: relative;
 }
 
-.if-user .logout::before {
-  content: "";
-  width: 20px;
-  height: 17px;
-  position: absolute;
-  left: 14px;
-  top: 15px;
-  background-image: url("../img/icon-logout.svg");
-  background-position: 0 0;
-  background-repeat: no-repeat;
+.login svg,
+.username svg,
+.logout svg {
+  fill: var(--basic-greylight);
+}
+
+.login:hover svg,
+.login:focus svg,
+.username:hover svg,
+.username:focus svg,
+.logout:hover svg,
+.logout:focus svg {
+  fill: var(--basic-grey);
+}
+
+.login:active svg,
+.username:active svg,
+.logout:active svg {
+  fill: var(--basic-greylight);
 }
 
 .if-user .personal-menu-list {
   width: 300px;
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -546,36 +545,8 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: var(--basic-greylight);
 }
 
-.login-block .login:hover::before,
-.login-block .login:focus::before {
-  background-image: url("../img/icon-login-hover.svg");
-}
-
-.login-block .login:active::before {
-  background-image: url("../img/icon-login.svg");
-}
-
-
-.if-user .username:hover::before,
-.if-user .username:focus::before {
-  background-image: url("../img/icon-user-hover.svg");
-}
-
-.if-user .username:active::before {
-  background-image: url("../img/icon-user.svg");
-}
-
-.if-user .logout:hover::before,
-.if-user .logout:focus::before {
-  background-image: url("../img/icon-logout-hover.svg");
-}
-
-.if-user .logout:active::before {
-  background-image: url("../img/icon-logout.svg");
-}
-
 .main-navigation {
-  height: 60px;
+  min-height: 60px;
   margin: 0;
   background-color: var(--dark-blue);
   box-shadow: inset 0px -5px 0px var(--dark-background);
@@ -593,7 +564,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .main-navigation li {
   margin: 0;
   list-style: none;
-  width: min-content;
 }
 
 .main-navigation .text-navigation:hover,
@@ -603,6 +573,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
  .section-title {
   margin: 0;
+  margin-bottom: 24px;
   font-family: var(--font-primary);
   font-size: 30px;
   line-height: 30px;
@@ -629,11 +600,12 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 13px;
   line-height: 24px;
   margin: 0;
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .main-text.main-text-partners {
-  margin-top: 26px;
+  margin-top: 2px;
+  margin-bottom: 3px;
 }
 
 .partners-list {
@@ -646,8 +618,7 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--font-primary);
   font-size: 18px;
   line-height: 24px;
-  margin-top: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   margin-left: 0;
   padding-left: 37px;
 }
@@ -678,7 +649,7 @@ li.partners::before {
 
 a.button {
   display: block;
-  height: 38px;
+  min-height: 38px;
   background-color: var(--basic-red);
   font-family: var(--font-primary);
   font-size: 14px;
@@ -704,7 +675,7 @@ a.button:active {
 
 .button-about {
   width: 220px;
-  margin-top: 20px;
+  margin-top: 19px;
 }
 
 .button-contacts {
@@ -738,7 +709,7 @@ a.button:active {
 .breadcrumbs a:not(.home-link)::before {
   content: "";
   width: 8px;
-  height: 12px;
+  min-height: 12px;
   position: absolute;
   left: -20px;
   top: 4px;
@@ -750,8 +721,6 @@ a.button:active {
 .home-link svg {
   fill: var(--special-greylight);
 }
-
-/* состояний в стайлгайде нет, на мой вкус */
 
 .breadcrumbs a:hover,
 .breadcrumbs a:focus {
@@ -788,23 +757,17 @@ a.button:active {
   padding-bottom: 10px;
   padding-left: 18px;
   background-color: var(--service-background);
+  border-radius: 3px;
   font-family: var(--font-extra);
   font-size: 13px;
   line-height: 18px;
+  font-weight: normal;
   text-transform: uppercase;
   color: var(--basic-black);
 }
 
 .sorting {
-  height: min-content;
   margin-left: 20px;
-}
-
-/* Убрать после верстки блока с фильтром по цене */
-.empty {
-  height: 180px;
-  background-color: var(--basic-background);
-  margin-bottom: 31px;
 }
 
 .filter fieldset {
@@ -836,13 +799,14 @@ a.button:active {
   cursor: pointer;
   user-select: none;
   margin-bottom: 20px;
+  padding-left: 40px;
 }
 
 .filter-input-checkbox + label::before {
   content: "";
   position: absolute;
-  top: 0px;
-  left: -40px;
+  top: 0;
+  left: 0;
   width: 27px;
   height: 23px;
   background-image: url("../img/checkbox-off.svg");
@@ -851,15 +815,7 @@ a.button:active {
 }
 
 .filter-input-checkbox:checked + label::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: -40px;
-  width: 27px;
-  height: 23px;
   background-image: url("../img/checkbox-on.svg");
-  background-position: 0 0;
-  background-repeat: no-repeat;
 }
 
 .filter-input-checkbox:checked + label:hover::before {
@@ -870,25 +826,25 @@ a.button:active {
   background-image: url("../img/checkbox-off-hover.svg");
 }
 
-.filter-input-checkbox[disabled] + label {
+.filter-input-checkbox[disabled] + * .manufacturer {
   opacity: 0.4;
 }
 
 .filter-input-checkbox[disabled]:not(:checked) + label::before {
   background-image: url(../img/checkbox-off-hover.svg);
-  opacity: 0.75;
+  opacity: 0.3;
 }
 
 .filter-input-checkbox[disabled]:checked + label::before {
   background-image: url(../img/checkbox-on-hover.svg);
-  opacity: 0.75;
+  opacity: 0.3;
 }
 
 .filter-input-radio + label::before {
   content: "";
   position: absolute;
   top: -3px;
-  left: -40px;
+  left: 0;
   width: 25px;
   height: 25px;
   background-color: inherit;
@@ -900,7 +856,7 @@ a.button:active {
   content: "";
   position: absolute;
   top: 5px;
-  left: -32px;
+  left: 8px;
   width: 9px;
   height: 9px;
   background-color: var(--basic-greylight);
@@ -915,22 +871,23 @@ a.button:active {
   background-color: var(--button-greylight);
 }
 
-.filter-input-radio[disabled] + label {
+.filter-input-radio[disabled] + * .battery {
   opacity: 0.4;
 }
 
+
 .filter-input-radio[disabled] + label::before {
-  opacity: 0.75;
+  opacity: 0.3;
   border-color: var(--button-greylight);
 }
 
 .filter-input-radio[disabled] + label::after {
-  opacity: 0.75;
+  opacity: 0.3;
   background-color: var(--button-greylight);
 }
 
 .filter .filter-button {
-  height: 38px;
+  min-height: 38px;
   color: var(--basic-black);
   font-family: var(--font-extra);
   font-size: 13px;
@@ -939,7 +896,91 @@ a.button:active {
   background-color: var(--basic-white);
   border: 1px solid var(--button-border-light);
 }
-/* Для других состояний меняются изображения инпутов, будет позже */
+
+.range-filter {
+  margin: 0;
+  padding: 0;
+  margin-top: 11px;
+  font-family: var(--font-extra);
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--price-filter);
+  font-weight: normal;
+}
+
+.range-controls {
+  position: relative;
+  height: 80px;
+  margin-bottom: 9px;
+  padding-top: 39px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 3px;
+  background-color: var(--service-background);
+}
+
+.range-controls .scale {
+  height: 2px;
+  background-color: var(--scale-grey);
+}
+
+.range-controls .bar {
+  height: 2px;
+  background-color: var(--scale-green);
+  width: 142px;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 8px solid var(--basic-white);
+  border-radius: 50%;
+  background-color: var(--scale-toggle);
+  box-shadow: 0 2px rgba(171, 171, 171, 0.3);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--button-border-light);
+  padding-bottom: 26px;
+}
+
+.price-controls label {
+  margin: 0;
+  padding: 0;
+}
+
+.price-controls span {
+  padding-top: 10px;
+}
+
+.price-controls input {
+  width: 95px;
+  font-size: 17px;
+  background-color: var(--service-background);
+  border: none;
+  border-radius: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.manufacturers {
+  border-bottom: 1px solid var(--button-border-light);
+}
 
 .catalog-list {
   margin: 0;
@@ -1021,7 +1062,7 @@ a.button:active {
 .item-navigation a.button {
   display: block;
   width: 135px;
-  height: 38px;
+  min-height: 38px;
   margin-bottom: 10px;
   background-color: var(--basic-green);
   color: var(--basic-white);
@@ -1040,7 +1081,7 @@ a.button:active {
 
 .item-navigation button.button {
   width: 135px;
-  height: 38px;
+  min-height: 38px;
   background-color: var(--basic-white);
   color: var(--dark-blue);
   border: 3px solid var(--basic-green);
@@ -1092,7 +1133,7 @@ a.button:active {
   right: -25px;
   top: -4px;
   width: 100px;
-  height: 30px;
+  min-height: 30px;
   transform: rotate(45deg);
   background-color: var(--basic-red);
   font-family: var(--font-primary);
@@ -1105,7 +1146,7 @@ a.button:active {
 }
 
 .goods-about {
-  height: 260px;
+  min-height: 260px;
   padding-top: 64px;
   background-color: var(--basic-background);
 }
@@ -1123,7 +1164,7 @@ a.button:active {
 }
 
 .main-footer .wrapper {
-  height: 193px;
+  min-height: 193px;
   display: grid;
   grid-template-columns: min-content 1fr;
 }
@@ -1150,7 +1191,6 @@ a.button:active {
 
 .footer-navigation li,
 .footer-navigation .text-navigation {
-  width: min-content;
   margin: 0;
   padding: 0;
 }
@@ -1172,7 +1212,7 @@ a.button:active {
 }
 
 .bottom-footer .wrapper {
-  height: 107px;
+  min-height: 107px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   flex-grow: 0;
@@ -1343,8 +1383,6 @@ ul.social {
   padding-bottom: 7px;
 }
 
-/* При стилизации крестика уточнить отступ свеху */
-
 .write-us-form-container {
   display: flex;
   flex-wrap: wrap;
@@ -1385,7 +1423,7 @@ textarea.write-us-form-input {
 }
 
 .form-submit-button {
-  height: 38px;
+  min-height: 38px;
   width: 460px;
   background-color: var(--basic-red);
   font-family: var(--font-primary);
@@ -1469,7 +1507,7 @@ textarea.write-us-form-input {
 
 .button.button-shopping {
   width: 192px;
-  height: 38px;
+  min-height: 38px;
   margin-left: 10px;
   background-color: var(--basic-white);
   border: none;

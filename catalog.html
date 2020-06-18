@@ -47,7 +47,7 @@
               <a href="blank.html" class="sign-up">Регистрация</a>
             </div>
             <!-- Если пользователь не авторизован, эти ссылки не отображаются -->
-            <div class="if-user">
+            <div class="if-user rows">
               <a href="blank.html" class="username">Равшан Джамшутович</a>
               <a href="blank.html" class="logout">
                 <span class="visually-hidden">Выход</span>
@@ -92,30 +92,49 @@
           <section class="filter col3">
             <h3 class="filter-title">Фильтр:</h3>
             <form action="https://echo.htmlacademy.ru" method="get">
-              <div class="empty col3">
-              </div>
+              <fieldset>
+                <legend>Цена:</legend>
+                <div class="range-filter col3">
+                  <div class="range-controls">
+                    <div class="scale">
+                      <div class="bar"></div>
+                    </div>
+                    <div class="toggle toggle-min" tabindex="0"></div>
+                    <div class="toggle toggle-max" tabindex="0"></div>
+                  </div>
+                  <div class="price-controls col3">
+                    <label class="min-price">
+                      <input type="number" name="min-price" value="0">
+                    </label>
+                    <span> — </span>
+                    <label class="max-price">
+                     <input type="number" name="max-price" value="30000">
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
               <fieldset>
                 <legend>Производители:</legend>
-                <ul>
+                <ul class="manufacturers">
                   <li>
                     <input id="filter-bosch" type="checkbox" name="bosch" class="visually-hidden filter-input-checkbox" checked>
-                    <label for="filter-bosch">Bosch</label>
+                    <label for="filter-bosch"><span class="manufacturer">Bosch</span></label>
                   </li>
                   <li>
                     <input id="filter-interskol" type="checkbox" name="interskol" class="visually-hidden filter-input-checkbox">
-                    <label for="filter-interskol">Интерскол</label>
+                    <label for="filter-interskol"><span class="manufacturer">Интерскол</span></label>
                   </li>
                   <li>
                     <input id="filter-makita" type="checkbox" name="makita" class="visually-hidden filter-input-checkbox" checked disabled="">
-                    <label for="filter-makita">Makita</label>
+                    <label for="filter-makita"><span class="manufacturer">Makita</span></label>
                   </li>
                   <li>
                     <input id="filter-dewalt" type="checkbox" name="dewalt" class="visually-hidden filter-input-checkbox" disabled="">
-                    <label for="filter-dewalt">Dewalt</label>
+                    <label for="filter-dewalt"><span class="manufacturer">Dewalt</span></label>
                   </li>
                   <li>
                     <input id="filter-hitachi" type="checkbox" name="hitachi" class="visually-hidden filter-input-checkbox">
-                    <label for="filter-hitachi">Hitachi</label>
+                    <label for="filter-hitachi"><span class="manufacturer">Hitachi</span></label>
                   </li>
                 </ul>
               </fieldset>
@@ -124,11 +143,11 @@
                 <ul>
                   <li>
                     <input id="filter-battery" type="radio" name="power-type" value="battery" class="visually-hidden filter-input-radio" checked disabled="">
-                    <label for="filter-battery">Аккумуляторные</label>
+                    <label for="filter-battery"><span class="battery">Аккумуляторные</span></label>
                   </li>
                   <li>
                     <input id="filter-power" type="radio" name="power-type" value="power" class="visually-hidden filter-input-radio">
-                    <label for="filter-power">Сетевые</label>
+                    <label for="filter-power"><span class="battery">Сетевые</span></label>
                   </li>
                 </ul>
               </fieldset>
