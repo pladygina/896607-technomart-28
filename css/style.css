@@ -649,7 +649,7 @@ li.partners::before {
 
 a.button {
   display: block;
-  min-height: 38px;
+  height: 38px;
   background-color: var(--basic-red);
   font-family: var(--font-primary);
   font-size: 14px;
@@ -711,11 +711,15 @@ a.button:active {
   width: 8px;
   min-height: 12px;
   position: absolute;
-  left: -20px;
-  top: 4px;
+  left: -22px;
+  top: 3px;
   background-image: url("../img/icon-right-small.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
+}
+
+.breadcrumbs li:first-child {
+  padding-top: 1px;
 }
 
 .home-link svg {
@@ -753,7 +757,7 @@ a.button:active {
 .filter-title {
   margin: 0;
   margin-bottom: 14px;
-  padding-top: 10px;
+  padding-top: 9px;
   padding-bottom: 10px;
   padding-left: 18px;
   background-color: var(--service-background);
@@ -767,13 +771,116 @@ a.button:active {
 }
 
 .sorting {
+  position: relative;
   margin-left: 20px;
+  padding-left: 2px;
+}
+
+.sorting-options {
+  position: absolute;
+  height: 38px;
+  right: 0;
+  top: -1px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 14px;
+  padding-left: 2px;
+  align-items: stretch;
+}
+
+.sorting-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: var(--font-extra);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.sorting-button::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  border-bottom: 1px dotted var(--basic-red);
+}
+
+.sorting-direction {
+  margin: 0;
+  padding: 0;
+  margin-left: -22px;
+}
+
+.sorting-button:hover,
+.sorting-button:focus {
+  color: var(--basic-black);
+  opacity: 1;
+  outline: none;
+}
+
+.sorting-button:hover::after,
+.sorting-button:focus::after {
+  border-bottom: 1px solid var(--basic-red);
+}
+
+
+.sorting-button.sorting-button-active,
+.sorting-button:active {
+  color: var(--basic-red);
+  opacity: 1;
+}
+
+
+.sorting-button.sorting-button-active::after,
+.sorting-button:active::after {
+  border-bottom: none;
+}
+
+.sorting-direction-button {
+  margin: 0;
+  padding: 0;
+  margin-right: 16px;
+  margin-top: 9px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.sorting-direction-button:last-child {
+  margin-right: 2px;
+}
+
+.sorting-direction-button svg {
+  fill: var(--basic-greylight);
+}
+
+.sorting-direction-button:focus {
+  outline: none;
+}
+
+.sorting-direction-button:hover svg,
+.sorting-direction-button:focus svg {
+  fill: var(--basic-black);
+}
+
+.sorting-direction-button.sorting-direction-button-active svg,
+.sorting-direction-button:active svg {
+  fill: var(--basic-red);
 }
 
 .filter fieldset {
   padding: 0;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   border: none;
 }
 
@@ -783,6 +890,8 @@ a.button:active {
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
+  padding-left: 0;
+  padding-top: 3px;
 }
 
 .filter legend {
@@ -798,14 +907,14 @@ a.button:active {
   display: block;
   cursor: pointer;
   user-select: none;
-  margin-bottom: 20px;
-  padding-left: 40px;
+  margin-bottom: 21px;
+  padding-left: 35px;
 }
 
 .filter-input-checkbox + label::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -3px;
   left: 0;
   width: 27px;
   height: 23px;
@@ -932,7 +1041,7 @@ a.button:active {
 
 .range-controls .toggle {
   position: absolute;
-  top: 30px;
+  top: 29px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -955,7 +1064,7 @@ a.button:active {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--button-border-light);
-  padding-bottom: 26px;
+  padding-bottom: 25px;
 }
 
 .price-controls label {
@@ -964,7 +1073,7 @@ a.button:active {
 }
 
 .price-controls span {
-  padding-top: 10px;
+  padding-top: 11px;
 }
 
 .price-controls input {
@@ -975,11 +1084,22 @@ a.button:active {
   border-radius: 3px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 16px;
   text-align: center;
 }
 
 .manufacturers {
+  padding-bottom: 4px;
   border-bottom: 1px solid var(--button-border-light);
+  margin-bottom: 4px;
+}
+
+.battery-list {
+  margin-top: 20px;
+}
+
+.battery-list li {
+  margin-top: 2px;
 }
 
 .catalog-list {
@@ -999,7 +1119,7 @@ a.button:active {
 
 .item-card {
   min-height: 318px;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 18px 0;
   position: relative;
   border: 1px solid var(--item-border);
   overflow: hidden;
@@ -1022,13 +1142,19 @@ a.button:active {
   position: relative;
   width: 100%;
   margin: auto 0;
+  min-height: 157px;
 }
 
 .item-menu .item-picture {
   position: relative;
   width: 100%;
+  min-height: 157px;
   background-color: var(--basic-white);
-  text-align: center;
+  padding-bottom: 6px;
+  margin-left: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-card:hover .item-picture {
@@ -1038,16 +1164,16 @@ a.button:active {
 
 .item-menu .item-navigation {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -67px;
-  margin-top: -43px;
+  top: 27px;
+  left: 41px;
 }
 
 .item-card h4 {
-  text-align: center;
+  margin: 0;
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 7px;
+  text-align: center;
 }
 
 .item-card .item-link {
@@ -1068,6 +1194,25 @@ a.button:active {
   color: var(--basic-white);
   box-shadow: inset 0px -3px 0px var(--basic-green-shadow);
   border-radius: 2px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-left: 13px;
+}
+
+.item-navigation a.button::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  background-image: url("../img/icon-cart.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0.3;
 }
 
 .item-navigation a.button:hover,
@@ -1113,7 +1258,7 @@ a.button:active {
   text-decoration: line-through;
   min-height: 18px;
   margin-top: 0;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 .item-card .new-price {
@@ -1121,20 +1266,22 @@ a.button:active {
   margin-bottom: 21px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 32px;
+  padding-left: 43px;
   padding-right: 44px;
   background-image: url("../img/red-button.svg");
   background-repeat: no-repeat;
+  background-position: 12px 0;
   color: var(--basic-white);
 }
 
 .item-card p.new-item {
   position: absolute;
-  right: -25px;
-  top: -4px;
+  right: -27px;
+  top: -6px;
   width: 100px;
   min-height: 30px;
   transform: rotate(45deg);
+  padding-top: 8px;
   background-color: var(--basic-red);
   font-family: var(--font-primary);
   font-size: 14px;
@@ -1142,7 +1289,53 @@ a.button:active {
   text-transform: uppercase;
   color: var(--basic-white);
   text-align: center;
-  /* Углы и выравнивание */
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 59px;
+}
+
+.catalog-list .pagination-list {
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+}
+
+.page-number {
+  height: 38px;
+  margin: 0;
+  margin-right: 9px;
+  font-family: var(--font-extra);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: normal;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-left: 16px;
+  padding-right: 15px;
+  border: 1px solid var(--button-border-light);
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.page-number.page-number-active {
+  color: var(--basic-white);
+  background-color: var(--basic-red);
+  border: none;
+}
+
+.next-page-button {
+  display: block;
+  margin: 0;
+  margin-top: 30px;
+  padding-left: 32px;
+  padding-right: 30px;
 }
 
 .goods-about {
@@ -1413,8 +1606,8 @@ textarea.write-us-form-input {
   width: 21px;
   height: 21px;
   position: absolute;
-  right: 11px;
-  top: 14px;
+  right: 12px;
+  top: 17px;
   background-color: transparent;
   background-image: url("../img/icon-close.svg");
   background-position: 50% 50%;
@@ -1472,7 +1665,9 @@ textarea.write-us-form-input {
 }
 
 .adding-goods {
-  position: relative; /* fixed? */
+  position: fixed;
+  left: calc(50% - 310px);
+  top: calc(50% - 141px);
   width: 620px;
   height: 282px;
   margin: 0;
@@ -1486,6 +1681,7 @@ textarea.write-us-form-input {
 }
 
 .success-adding {
+  position: relative;
   height: 170px;
   margin: 0;
   padding-top: 73px;
@@ -1494,6 +1690,18 @@ textarea.write-us-form-input {
   font-size: 24px;
   line-height: 30px;
   font-weight: bold;
+}
+
+.success-adding::before {
+  content: "";
+  position: absolute;
+  left: 81px;
+  top: 55px;
+  width: 66px;
+  height: 66px;
+  background-image: url("../img/icon-mark.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 
 .adding-goods .form-button-container {
@@ -1507,7 +1715,7 @@ textarea.write-us-form-input {
 
 .button.button-shopping {
   width: 192px;
-  min-height: 38px;
+  height: 38px;
   margin-left: 10px;
   background-color: var(--basic-white);
   border: none;
