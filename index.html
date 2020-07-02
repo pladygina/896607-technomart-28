@@ -7,7 +7,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
-  <body class="page-body">
+  <body class="page-body page-index">
     <header>
       <!-- Шапка сайта -->
       <div class="site-navigation">
@@ -121,8 +121,8 @@
                 </li>
               </ul>
               <div class="slider-controls">
-                <button type="button" class="current-slide"><span class="visually-hidden">Первый слайд</span></button>
-                <button type="button"><span class="visually-hidden">Второй слайд</span></button>
+                <button type="button" class="slide-control current-slide"><span class="visually-hidden">Перфораторы</span></button>
+                <button type="button" class="slide-control"><span class="visually-hidden">Дрели</span></button>
               </div>
               <button class="slider-shift shift-left"><span class="visually-hidden">Предыдущий слайд</span></button>
               <button class="slider-shift shift-right"><span class="visually-hidden">Следующий слайд</span></button>
@@ -244,7 +244,7 @@
               <button class="services-slider-button slide-credit">Кредит</button>
             </div>
             <ul class="services-slide-list col8">
-              <li class="services-slide-item services-delivery hide">
+              <li class="services-slide-item services-delivery">
                 <h2 class="section-title section-title-special">Доставка</h2>
                 <p class="main-text">
                   Мы с удовольствием доставим ваш товар прямо<br>
@@ -259,14 +259,13 @@
                   Если купленный у нас товар поломается или заискрит,<br>
                   а также в случае пожара, спровоцированного его<br>
                   возгоранием,  вы всегда можете быть уверены в нашей<br>
-                  гарантии. Мы обменяем сгоревший товар на новый.<br> 
-                  Дом уж восстановите как-нибудь сами.
+                  гарантии. Мы обменяем сгоревший товар на новый.<br> Дом уж восстановите как-нибудь сами.
                 </p>
               </li>
               <li class="services-slide-item services-credit hide">
                 <h2 class="section-title section-title-special">Кредит</h2>
                 <p class="main-text">
-                  Залезть в долговую яму стало проще!<br> Кредитные консультанты придут вам на помощь.
+                  Залезть в долговую яму стало проще!<br> Кредитные консультанты придут вам на помощь.
                 </p>
                 <a href="blank.html" class="button">Отправить заявку</a>
               </li>
@@ -381,33 +380,34 @@
         <div class="write-us-form-container col6">
           <p class="col3">
             <label for="feedback-name" class="write-us-form-label">Ваше имя:</label>
-            <input id="feedback-name" type="text" name="name" placeholder="Имя Фамилия" class="write-us-form-input col3">
+            <input id="feedback-name" type="text" name="name" placeholder="Имя Фамилия" class="write-us-form-input write-us-name col3">
           </p>
           <p class="col3">
             <label for="feedback-mail" class="write-us-form-label">Ваш e-mail:</label>
-            <input id="feedback-mail" type="email" name="mail" placeholder="email@example.com" class="write-us-form-input col3">
+            <input id="feedback-mail" type="email" name="mail" placeholder="email@example.com" class="write-us-form-input write-us-mail col3">
           </p>
           <p class="col6">
             <label for="feedback-text" class="write-us-form-label">Текст письма:</label>
-            <textarea id="feedback-text" name="text" placeholder="В свободной форме" class="write-us-form-input col6"></textarea>
+            <textarea id="feedback-text" name="text" placeholder="В свободной форме" class="write-us-form-input write-us-text col6"></textarea>
           </p>
         </div>
         <div class="form-button-container">
-          <button type="submit" class="button form-submit-button">Отправить</button>
+          <button type="submit" class="button form-submit-button write-us-send">Отправить</button>
         </div>
       </form>
-      <button type="button" class="popup-close">
+      <button type="button" class="popup-close write-us-close">
         <span class="visually-hidden">Закрыть</span>
       </button>
     </section>
     <section class="big-map hide">
       <h2 class="visually-hidden">Всплывающая карта</h2>
       <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1998.5346585308894!2d30.32173066609708!3d59.93986348187666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0JEuINCa0L7QvdGO0YjQtdC90L3QsNGPIDE5Lzg!5e0!3m2!1sru!2sru!4v1593034125873!5m2!1sru!2sru" width="970" height="477" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="big-map-pic"></iframe>
-      <button type="button" class="popup-close">
+      <button type="button" class="popup-close big-map-close">
         <span class="visually-hidden">Закрыть</span>
       </button>
       <div class="top-frame">
       </div>
     </section>
+    <script src="js/script.js"></script>
   </body>
 </html>
