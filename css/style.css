@@ -521,7 +521,7 @@ span.username-text {
   fill: var(--basic-greylight);
 }
 
-.if-user .personal-menu-list {
+.if-user a.personal-menu-list {
   width: 300px;
   display: flex;
   justify-content: center;
@@ -1792,7 +1792,7 @@ p.new-item {
   list-style: none;
 }
 
-.page-number {
+a.page-number {
   height: 38px;
   margin: 0;
   margin-right: 9px;
