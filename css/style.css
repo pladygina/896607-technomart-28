@@ -521,7 +521,7 @@ span.username-text {
   fill: var(--basic-greylight);
 }
 
-.if-user a.personal-menu-list {
+.if-user .personal-menu-list {
   width: 300px;
   display: flex;
   justify-content: center;
@@ -534,6 +534,10 @@ span.username-text {
   font-size: 16px;
   line-height: 18px;
   list-style: none;
+}
+
+a.personal-menu {
+  color: inherit;
 }
 
 .if-user li:not(:first-child) {
@@ -1792,7 +1796,7 @@ p.new-item {
   list-style: none;
 }
 
-a.page-number {
+.page-number {
   height: 38px;
   margin: 0;
   margin-right: 9px;
@@ -1808,6 +1812,10 @@ a.page-number {
   border: 1px solid var(--button-border-light);
   border-radius: 2px;
   background-color: transparent;
+}
+
+.page-number a {
+  color: inherit;
 }
 
 .page-number.page-number-active {
