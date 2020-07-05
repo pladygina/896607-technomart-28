@@ -51,7 +51,7 @@ if (pageType.classList.contains("page-index")) {
       promoSliderControls[currentSlide].classList.remove("current-slide");
       promoSliderCurrentNumber = newSlide;
     }
-  }
+  };
 
   for (var j = 0; j < promoSliderControls.length; j++) {
     if (promoSliderControls[j].classList.contains("current-slide")) {
@@ -66,7 +66,7 @@ if (pageType.classList.contains("page-index")) {
       promoSliderNewNumber = promoSliderNewNumber + promoSliderItems.length;
     }
     promoSliderShift(promoSliderNewNumber, promoSliderCurrentNumber);
-  })
+  });
 
   promoSliderNext.addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -75,7 +75,7 @@ if (pageType.classList.contains("page-index")) {
       promoSliderNewNumber = promoSliderNewNumber - promoSliderItems.length;
     }
     promoSliderShift(promoSliderNewNumber, promoSliderCurrentNumber);
-  })
+  });
 
   promoSliderControls[0].addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -83,7 +83,7 @@ if (pageType.classList.contains("page-index")) {
       promoSliderNewNumber = 0;
       promoSliderShift(promoSliderNewNumber, promoSliderCurrentNumber);
     }
-  })
+  });
 
   promoSliderControls[1].addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -91,7 +91,7 @@ if (pageType.classList.contains("page-index")) {
       promoSliderNewNumber = 1;
       promoSliderShift(promoSliderNewNumber, promoSliderCurrentNumber);
     }
-  })
+  });
 
   /* оживление слайдера - сервисы */
   var servicesSliderShift = function(newSlide, currentSlide) {
@@ -102,7 +102,7 @@ if (pageType.classList.contains("page-index")) {
       servicesSliderButtons[currentSlide].classList.remove("services-slide-active");
       servicesSliderCurrentNumber = newSlide;
     }
-  }
+  };
 
   servicesSliderButtons[0].addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -110,7 +110,7 @@ if (pageType.classList.contains("page-index")) {
       servicesSliderNewNumber = 0;
       servicesSliderShift(servicesSliderNewNumber, servicesSliderCurrentNumber);
     }
-  })
+  });
 
   servicesSliderButtons[1].addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -118,7 +118,7 @@ if (pageType.classList.contains("page-index")) {
       servicesSliderNewNumber = 1;
       servicesSliderShift(servicesSliderNewNumber, servicesSliderCurrentNumber);
     }
-  })
+  });
 
   servicesSliderButtons[2].addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -126,7 +126,7 @@ if (pageType.classList.contains("page-index")) {
       servicesSliderNewNumber = 2;
       servicesSliderShift(servicesSliderNewNumber, servicesSliderCurrentNumber);
     }
-  })
+  });
 
   /* модальное окно карты */
   contactsMap.addEventListener("click", function(evt) {
@@ -134,19 +134,19 @@ if (pageType.classList.contains("page-index")) {
     if (modalMap.classList.contains("hide")) {
       modalMap.classList.remove("hide");
     }
-  })
+  });
 
   modalMapClose.addEventListener("click", function(evt) {
     evt.preventDefault();
     modalMap.classList.add("hide");
-  })
+  });
 
   window.addEventListener("keydown", function(evt) {
     if (evt.keyCode === 27) {
       evt.preventDefault();
       modalMap.classList.add("hide");
     }
-  })
+  });
 
   /* модальное окно с формой обратной связи */
   if (isStorageSupport) {
@@ -170,13 +170,13 @@ if (pageType.classList.contains("page-index")) {
        modalWriteName.focus();
      }
     }
-  })
+  });
 
   modalWriteClose.addEventListener("click", function(evt) {
     evt.preventDefault();
     modalWrite.classList.add("hide");
     modalWrite.classList.remove("modal-error");
-  })
+  });
 
   window.addEventListener("keydown", function(evt) {
     if (evt.keyCode === 27) {
@@ -184,7 +184,7 @@ if (pageType.classList.contains("page-index")) {
       modalWrite.classList.add("hide");
       modalWrite.classList.remove("modal-error");
     }
-  })
+  });
 
   modalWriteForm.addEventListener("submit", function(evt) {
     if (!modalWriteName.value || !modalWriteEmail.value || !modalWriteText.value) {
@@ -198,7 +198,7 @@ if (pageType.classList.contains("page-index")) {
         localStorage.setItem("email", modalWriteEmail.value);
       }
     }
-  })
+  });
 }
 
 if (pageType.classList.contains("page-catalog")) {
@@ -208,23 +208,24 @@ if (pageType.classList.contains("page-catalog")) {
       if (buyMessage.classList.contains("hide")) {
         buyMessage.classList.remove("hide");
       }
-    })
+    });
   }
+
 
   buttonShopping.addEventListener("click", function(evt) {
     evt.preventDefault();
     buyMessage.classList.add("hide");
-  })
+  });
 
   buyMessageClose.addEventListener("click", function(evt) {
     evt.preventDefault();
     buyMessage.classList.add("hide");
-  })
+  });
 
   window.addEventListener("keydown", function(evt) {
     if (evt.keyCode === 27) {
       evt.preventDefault();
       buyMessage.classList.add("hide");
     }
-  })
+  });
 }
