@@ -11,7 +11,7 @@ if (pageType.classList.contains("page-index")) {
   var servicesSliderCurrentNumber = 0;
   var servicesSliderNewNumber = 0;
   var contactsMap = document.querySelector(".contacts-map");
-  var modalMap = document.querySelector(".big-map");
+  var modalMap = document.querySelector(".big-map-popup");
   var modalMapClose = modalMap.querySelector(".big-map-close");
   var contactsWrite = document.querySelector(".button-contacts");
   var modalWrite = document.querySelector(".write-us");
