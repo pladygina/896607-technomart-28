@@ -202,15 +202,14 @@ if (pageType.classList.contains("page-index")) {
 }
 
 if (pageType.classList.contains("page-catalog")) {
-  for (var button of buyButtons) {
+  buyButtons.forEach(function(button) {
     button.addEventListener("click", function(evt) {
       evt.preventDefault();
       if (buyMessage.classList.contains("hide")) {
         buyMessage.classList.remove("hide");
       }
     });
-  }
-
+  });
 
   buttonShopping.addEventListener("click", function(evt) {
     evt.preventDefault();

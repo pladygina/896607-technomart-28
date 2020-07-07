@@ -23,11 +23,13 @@
   --success: #5FBB2D;
   --warning: #FFC047;
   --error: #BA2732;
+  --button-dark-red: #CA2C37;
   --dark-background: #293449;
   --title-background: #F2F6F8;
   --service-background: #F7F3EC;
   --form-background: #F4F4F4;
   --popular-background: #F9F5F0;
+  --slider-background: #A69580;
   --transparent-white: rgba(255, 255, 255, 0.3);
   --transparent-greylight: rgba(197, 197, 197, 0.3);
   --transparent-grey: rgba(169, 169, 169, 0.3);
@@ -50,7 +52,7 @@
 }
 
 body {
-  min-width: 960px;
+  min-width: 943px;
   margin: 0;
   padding: 0;
   background-color: var(--basic-white);
@@ -84,9 +86,7 @@ a {
 }
 
 .wrapper {
-  width: 960px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 940px;
   margin: 0 auto;
 }
 
@@ -285,6 +285,12 @@ a {
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
   padding-left: 55px;
   padding-top: 12px;
+}
+
+.main-logo:hover,
+.main-logo:focus {
+  background-color: var(--button-dark-red);
+  outline: none;
 }
 
 .main-logo:active {
@@ -743,6 +749,7 @@ a.personal-menu {
   grid-row-start: -3;
   grid-row-end: -1;
   padding: 0;
+  background-color: var(--slider-background);
   background-image: url("../img/background-slide1.jpg");
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -805,12 +812,6 @@ a.personal-menu {
   left: 24px;
   width: 192px;
   min-height: 38px;
-}
-
-.slide-item a.button:hover,
-.slide-item a.button:focus {
-  background-color: var(--basic-red);
-  outline: none;
 }
 
 .slide-item a.button:active {
@@ -930,7 +931,6 @@ a.manufacturer-item-link:focus img {
   padding: 0;
   height: 329px;
   justify-content: space-between;
-  align-items: space-between;
   list-style: none;
 }
 
@@ -1141,6 +1141,12 @@ a.button {
   text-transform: uppercase;
   padding-top: 11px;
   text-align: center;
+}
+
+a.button:hover,
+a.button:focus {
+  background-color: var(--button-dark-red);
+  outline: none;
 }
 
 a.button:active {
@@ -1945,6 +1951,16 @@ p.new-item {
   padding-left: 41px;
   background-color: var(--basic-red);
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+}
+
+.footer-logo:hover,
+.footer-logo:focus {
+  background-color: var(--button-dark-red);
+  outline: none;
+}
+
+.footer-logo:active {
+  background-color: var(--error);
 }
 
 .footer-contacts .tel,
