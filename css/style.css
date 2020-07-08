@@ -2151,6 +2151,16 @@ textarea.write-us-form-input {
   border: none;
 }
 
+.form-submit-button:hover,
+.form-submit-button:focus {
+  background-color: var(--button-dark-red);
+  outline: none;
+}
+
+.form-submit-button:active {
+  background-color: var(--error);
+}
+
 .modal-show {
   -webkit-animation: bounce 0.8s;
           animation: bounce 0.8s;
