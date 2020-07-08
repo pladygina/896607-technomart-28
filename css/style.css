@@ -287,12 +287,6 @@ a {
   padding-top: 12px;
 }
 
-.main-logo:hover,
-.main-logo:focus {
-  background-color: var(--button-dark-red);
-  outline: none;
-}
-
 .main-logo:active {
   background-color: var(--error);
 }
@@ -1951,12 +1945,6 @@ p.new-item {
   padding-left: 41px;
   background-color: var(--basic-red);
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
-}
-
-.footer-logo:hover,
-.footer-logo:focus {
-  background-color: var(--button-dark-red);
-  outline: none;
 }
 
 .footer-logo:active {
